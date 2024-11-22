@@ -86,4 +86,19 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 
-function playGAME() {}
+function playGAME() {
+  for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
+
+  console.log(`Final Scores: You - ${humanScore}, Computer - ${computerScore}`);
+  if (humanScore > computerScore) {
+    console.log("You win the game!");
+  } else if (computerScore > humanScore) {
+    console.log("Computer wins the game!");
+  } else {
+    console.log("The game is a draw!");
+  }
+}
