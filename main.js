@@ -1,4 +1,5 @@
 function getComputerChoice() {
+  //computer returns a random string
   const randomNum = Math.floor(Math.random() * 3);
 
   if (randomNum === 0) {
@@ -14,6 +15,7 @@ const ComputerChoice = getComputerChoice();
 console.log(ComputerChoice);
 
 function getHumanChoice() {
+  // get input from user
   const userInput = prompt(
     "Choose from, (rock, paper or scissors):"
   ).toLowerCase(); // to be changed if not relevant
@@ -31,19 +33,20 @@ function getHumanChoice() {
   }
 }
 
-const humanChoice = getHumanChoice();
+const humanChoice = getHumanChoice(); // returns the choices of the user
 console.log(`You choose: ${humanChoice}`);
 
 let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
+  // function that will determine the winner of a round
   humanChoice = humanChoice.toLowerCase();
   computerChoice = computerChoice.toLowerCase();
 
   if (humanChoice === computerChoice) {
     console.log(
-      `It's a draw! both chose${
+      `It's a draw! both choose ${
         humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)
       }.`
     );
@@ -82,9 +85,14 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGAME() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 3; i++) {
     const humanSelection = getHumanChoice();
+    console.log(`You chose: ${humanSelection}`);
+
     const computerSelection = getComputerChoice();
+    console.log(`Computer chose: ${computerSelection}`);
+
+    console.log(`Round ${i + 1}:`);
     playRound(humanSelection, computerSelection);
   }
 
@@ -97,3 +105,5 @@ function playGAME() {
     console.log("The game is a draw!");
   }
 }
+
+playGAME();
