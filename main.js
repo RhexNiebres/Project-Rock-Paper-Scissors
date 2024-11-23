@@ -85,7 +85,8 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGAME() {
-  for (let i = 0; i < 3; i++) {
+  //
+  for (let i = 0; i < 2; i++) {
     const humanSelection = getHumanChoice();
     console.log(`You chose: ${humanSelection}`);
 

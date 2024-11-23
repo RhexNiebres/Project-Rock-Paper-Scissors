@@ -17,7 +17,7 @@ Rock, Paper, Scissors is a classic hand game played between two players. In this
    - Rock beats scissors, scissors beat paper, and paper beats rock.
    - If both players choose the same option, it results in a draw.
 
-3. **Rounds**: The game consists of **3 rounds**. Each player’s score will be tracked throughout these rounds.
+3. **Rounds**: The game consists of **3 rounds**. Each player’s score will be tracked throughout these rounds.If both scores are equal, the game is declared a draw.
 
 4. **Game End**: At the end of rounds, the player with the highest score wins the game.
 
