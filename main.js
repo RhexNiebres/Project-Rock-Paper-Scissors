@@ -43,7 +43,7 @@ function playRound(humanChoice, computerChoice) {
 
   if (humanChoice === computerChoice) {
     console.log(
-      `It's a draw!${
+      `It's a draw! both chose${
         humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)
       }.`
     );
@@ -80,11 +80,6 @@ function playRound(humanChoice, computerChoice) {
     return;
   }
 }
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
 
 function playGAME() {
   for (let i = 0; i < 5; i++) {
