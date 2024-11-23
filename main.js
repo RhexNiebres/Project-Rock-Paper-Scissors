@@ -85,7 +85,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGAME() {
-  //
+  //amount of rounds
   for (let i = 0; i < 2; i++) {
     const humanSelection = getHumanChoice();
     console.log(`You chose: ${humanSelection}`);
@@ -104,7 +104,7 @@ function playGAME() {
     console.log("Computer wins the game!");
   } else {
     console.log("The game is a draw!");
-  }
+  } // console final score and the winner
 }
 
 playGAME();
