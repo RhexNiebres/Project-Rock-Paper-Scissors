@@ -35,6 +35,10 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function playRound(humanChoice, computerChoice) {
   // function that will determine the winner of a round
   humanChoice = humanChoice.toLowerCase();
@@ -42,11 +46,9 @@ function playRound(humanChoice, computerChoice) {
 
   if (humanChoice === computerChoice) {
     console.log(
-      `It's a draw! both choose ${
-        humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)
-      }.`
+      `It's a draw! Both chose ${capitalizeFirstLetter(humanChoice)}.`
     );
-    return;
+    return "draw";
   }
   if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
@@ -55,12 +57,11 @@ function playRound(humanChoice, computerChoice) {
   ) {
     humanScore++;
     console.log(
-      `You win! ${
-        humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)
-      }beats ${
-        computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
-      }.`
+      `You win! ${capitalizeFirstLetter(
+        humanChoice
+      )} beats ${capitalizeFirstLetter(computerChoice)}.`
     );
+    return "human";
   } else if (
     (humanChoice === "rock" && computerChoice === "paper") ||
     (humanChoice === "scissors" && computerChoice === "rock") ||
@@ -68,10 +69,11 @@ function playRound(humanChoice, computerChoice) {
   ) {
     computerScore++;
     console.log(
-      `You lose! ${
-        computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
-      } beats ${humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)}.`
+      `You lose! ${capitalizeFirstLetter(
+        computerChoice
+      )} beats ${capitalizeFirstLetter(humanChoice)}.`
     );
+    return "computer";
   } else {
     console.log(
       `Invalid choice: ${humanChoice}. Please choose rock, paper, or scissors.`
@@ -82,7 +84,7 @@ function playRound(humanChoice, computerChoice) {
 
 function playGAME() {
   //amount of rounds
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 3; i++) {
     const humanSelection = getHumanChoice();
     console.log(`You chose: ${humanSelection}`);
 
