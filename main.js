@@ -12,7 +12,6 @@ function getComputerChoice() {
 }
 
 const ComputerChoice = getComputerChoice();
-console.log(ComputerChoice);
 
 function getHumanChoice() {
   // get input from user
@@ -32,9 +31,6 @@ function getHumanChoice() {
     return getHumanChoice();
   }
 }
-
-const humanChoice = getHumanChoice(); // returns the choices of the user
-console.log(`You choose: ${humanChoice}`);
 
 let humanScore = 0;
 let computerScore = 0;
