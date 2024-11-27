@@ -12,19 +12,16 @@
 
     <script>
       function getComputerChoice() {
-        //computer returns a random string
         const randomNum = Math.floor(Math.random() * 3);
-
-        if (randomNum === 0) {
-          return "rock";
-        } else if (randomNum === 1) {
-          return "paper";
-        } else {
-          return "scissors";
+        switch (randomNum) {
+          case 0:
+            return "rock";
+          case 1:
+            return "paper";
+          case 2:
+            return "scissors";
         }
       }
-
-      const ComputerChoice = getComputerChoice();
 
       let humanScore = 0;
       let computerScore = 0;
@@ -33,10 +30,10 @@
         return string.charAt(0).toUpperCase() + string.slice(1);
       }
 
-      function playRound(humanChoice, computerChoice) {
-        // function that will determine the winner of a round
+      function playRound(humanChoice) {
+        const computerChoice = getComputerChoice(); // Get the computer's choice
+        console.log(`Computer chose: ${capitalizeFirstLetter(computerChoice)}`);
         humanChoice = humanChoice.toLowerCase();
-        computerChoice = computerChoice.toLowerCase();
 
         if (humanChoice === computerChoice) {
           console.log(
