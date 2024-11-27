@@ -1,0 +1,113 @@
+body {
+  font-family: "Dancing Script", cursive;
+  font-size: 16px;
+  color: white;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #2e2e2e;
+}
+h1 {
+  border: solid white;
+  border-radius: 10px;
+  text-align: center;
+  margin: 30px;
+  font-size: 40px;
+  margin-top: 50px;
+  padding: 0px 5px 0px 5px;
+  box-sizing: border-box;
+}
+#buttonContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-direction: row;
+  align-content: space-between;
+  margin-top: 50px;
+}
+@media (max-width: 500px) {
+  #buttonContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-direction: column;
+    align-content: space-between;
+  }
+}
+#rockButton {
+  border: solid black;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  padding: 0px 20px;
+  font-size: 100px;
+  background-color: #ffdc32;
+}
+#rockButton:hover {
+  background-color: #ffed98;
+}
+#paperButton {
+  border: solid black;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 100px;
+  background-color: #72d3fe;
+}
+#paperButton:hover {
+  background-color: #a9e5ff;
+}
+#scissorsButton {
+  border: solid black;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 100px;
+  background-color: #90f0b4;
+}
+#scissorsButton:hover {
+  background-color: #caffde;
+}
+#resultScoreContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  align-content: space-evenly;
+}
+@media (max-width: 500px) {
+  #resultScoreContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    align-content: space-between;
+  }
+}
+#result {
+  border: solid white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 10px;
+  font-size: 30px;
+  background-color: #2e2e2e;
+  box-sizing: border-box;
+  flex-grow: 1;
+  margin: 20px;
+  color: white;
+}
+
+#score {
+  border: solid white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 30px;
+  background-color: #2e2e2e;
+  box-sizing: border-box;
+  flex-grow: 1;
+  margin: 20px;
+  color: white;
+}

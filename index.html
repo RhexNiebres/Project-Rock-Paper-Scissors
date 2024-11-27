@@ -3,17 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!--font awesome link-->
     <title>Project: Rock Paper Scissors</title>
   </head>
   <body>
-    <h1>Lets play Rock! Paper! Scissors!</h1>
-    <button id="rockButton">Rock</button>
-    <button id="paperButton">Paper</button>
-    <button id="scissorsButton">Scissors</button>
-
-    <div id="result"></div>
-    <div id="score"></div>
-    <!-- Div for displaying the score -->
+    <h1>Rock Paper Scissors</h1>
+    <div id="resultScoreContainer">
+      <div id="result">Who will win?</div>
+      <div id="score">Score - You: 0 | Computer: 0</div>
+    </div>
+    <div id="buttonContainer">
+      <button id="rockButton">
+        <i class="fa-regular fa-hand-back-fist"></i>
+      </button>
+      <!--add icon from font awesome-->
+      <button id="paperButton"><i class="fa-regular fa-hand"></i></button>
+      <button id="scissorsButton">
+        <i class="fa-regular fa-hand-scissors"></i>
+      </button>
+    </div>
 
     <script src="script.js"></script>
   </body>
