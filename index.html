@@ -29,9 +29,16 @@
 
       let humanScore = 0;
       let computerScore = 0;
+      const maxScore = 5;
 
       function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+
+      // Function to update the score display
+      function updateScore() {
+        const scoreDiv = document.getElementById("score");
+        scoreDiv.textContent = `Score - You: ${humanScore} | Computer: ${computerScore}`;
       }
 
       function playRound(humanChoice) {
@@ -40,11 +47,6 @@
         let resultMessage;
         humanChoice = humanChoice.toLowerCase();
 
-        if (humanChoice === computerChoice) {
-          resultMessage = `It's a draw! Both chose ${capitalizeFirstLetter(
-            humanChoice
-          )}.`;
-        }
         if (humanChoice === computerChoice) {
           resultMessage = `It's a draw! Both chose ${capitalizeFirstLetter(
             humanChoice
@@ -64,9 +66,12 @@
             computerChoice
           )} beats ${capitalizeFirstLetter(humanChoice)}.`;
         }
+
         resultDiv.textContent = resultMessage;
+        updateScore(); //update score display
         checkForWinner();
       }
+
       function checkForWinner() {
         const resultDiv = document.getElementById("result");
         if (humanScore === maxScore) {
@@ -84,6 +89,7 @@
         computerScore = 0;
         updateScore();
       }
+
       document
         .getElementById("rockButton")
         .addEventListener("click", function () {
