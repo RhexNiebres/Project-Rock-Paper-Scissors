@@ -18,10 +18,10 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-// Function to update the score display
+// update Function to update the score display
 function updateScore() {
-  const scoreDiv = document.getElementById("score");
-  scoreDiv.textContent = `Score - You: ${humanScore} | Computer: ${computerScore}`;
+  document.getElementById("youScore").textContent = `${humanScore}`;
+  document.getElementById("computerScore").textContent = `${computerScore}`;
 }
 
 function playRound(humanChoice) {
@@ -58,9 +58,11 @@ function playRound(humanChoice) {
 function checkForWinner() {
   const resultDiv = document.getElementById("result");
   if (humanScore === maxScore) {
+    alert("Congratulations! You are the champion!");
     resultDiv.textContent = "Congratulations! You are the champion!";
     resetGame();
   } else if (computerScore === maxScore) {
+    alert("Sorry! The computer is the champion!");
     resultDiv.textContent = "Sorry! The computer is the champion!";
     resetGame();
   }
