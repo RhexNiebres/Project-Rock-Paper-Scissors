@@ -13,9 +13,10 @@
   </head>
   <body>
     <h1>Rock Paper Scissors</h1>
-    <div id="resultScoreContainer">
-      <div id="result">Who will win?</div>
-      <div id="score">Score - You: 0 | Computer: 0</div>
+    <div id="scoreboard">
+      Scores
+      <p>You: <span id="youScore">0</span></p>
+      <p>Computer: <span id="computerScore">0</span></p>
     </div>
     <div id="buttonContainer">
       <button id="rockButton">
@@ -27,7 +28,8 @@
         <i class="fa-regular fa-hand-scissors"></i>
       </button>
     </div>
-
+    <div id="result">Make your choice!</div>
+    <div></div>
     <script src="script.js"></script>
   </body>
 </html>
