@@ -6,6 +6,10 @@
     <title>Project: Rock Paper Scissors</title>
   </head>
   <body>
+    <button id="rockButton">Rock</button>
+    <button id="paperButton">Paper</button>
+    <button id="scissorsButton">Scissors</button>
+
     <script>
       function getComputerChoice() {
         //computer returns a random string
@@ -21,25 +25,6 @@
       }
 
       const ComputerChoice = getComputerChoice();
-
-      function getHumanChoice() {
-        // get input from user
-        const userInput = prompt(
-          "Choose from, (rock, paper or scissors):"
-        ).toLowerCase(); // to be changed if not relevant
-
-        if (
-          userInput === "rock" ||
-          userInput === "paper" ||
-          userInput === "scissors"
-        ) {
-          return userInput;
-        } else {
-          alert("Invalid choice. Please enter rock, paper or scissors.");
-
-          return getHumanChoice();
-        }
-      }
 
       let humanScore = 0;
       let computerScore = 0;
@@ -90,6 +75,21 @@
           return;
         }
       }
+      document
+        .getElementById("rockButton")
+        .addEventListener("click", function () {
+          playRound("rock");
+        });
+      document
+        .getElementById("paperButton")
+        .addEventListener("click", function () {
+          playRound("paper");
+        });
+      document
+        .getElementById("scissorsButton")
+        .addEventListener("click", function () {
+          playRound("scissors");
+        });
     </script>
   </body>
 </html>
