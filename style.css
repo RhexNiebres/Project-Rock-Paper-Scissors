@@ -11,11 +11,12 @@ h1 {
   border: solid white;
   border-radius: 10px;
   text-align: center;
-  margin: 30px;
+  margin: 30px auto;
   font-size: 40px;
   margin-top: 50px;
   padding: 0px 5px 0px 5px;
   box-sizing: border-box;
+  max-width: 500px;
 }
 #buttonContainer {
   display: flex;
@@ -23,7 +24,8 @@ h1 {
   align-content: center;
   flex-direction: row;
   align-content: space-between;
-  margin-top: 50px;
+  margin-top: 10px;
+  padding: 0px 20px;
 }
 @media (max-width: 500px) {
   #buttonContainer {
@@ -70,22 +72,7 @@ h1 {
 #scissorsButton:hover {
   background-color: #caffde;
 }
-#resultScoreContainer {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: row;
-  align-content: space-evenly;
-}
-@media (max-width: 500px) {
-  #resultScoreContainer {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    align-content: space-between;
-  }
-}
+
 #result {
   border: solid white;
   border-radius: 10px;
@@ -94,20 +81,35 @@ h1 {
   font-size: 30px;
   background-color: #2e2e2e;
   box-sizing: border-box;
-  flex-grow: 1;
-  margin: 20px;
+  margin: 20px auto;
   color: white;
+  max-width: 500px;
 }
 
-#score {
+#scoreboard {
   border: solid white;
   border-radius: 10px;
   text-align: center;
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 30px;
   background-color: #2e2e2e;
   box-sizing: border-box;
-  flex-grow: 1;
-  margin: 20px;
   color: white;
+  max-width: 300px;
+  position: static;
+  margin: 20px auto;
+}
+
+#decisionLog {
+  border: solid white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 10px;
+  font-size: 30px;
+  background-color: #2e2e2e;
+  box-sizing: border-box;
+  color: white;
+  max-width: 300px;
+  position: static;
+  margin: 20px auto;
 }
