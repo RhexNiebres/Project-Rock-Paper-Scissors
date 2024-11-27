@@ -10,6 +10,10 @@
     <button id="paperButton">Paper</button>
     <button id="scissorsButton">Scissors</button>
 
+    <div id="result"></div>
+    <div id="score"></div>
+    <!-- Div for displaying the score -->
+
     <script>
       function getComputerChoice() {
         const randomNum = Math.floor(Math.random() * 3);
@@ -32,45 +36,53 @@
 
       function playRound(humanChoice) {
         const computerChoice = getComputerChoice(); // Get the computer's choice
-        console.log(`Computer chose: ${capitalizeFirstLetter(computerChoice)}`);
+        const resultDiv = document.getElementById("result"); // Get the result div
+        let resultMessage;
         humanChoice = humanChoice.toLowerCase();
 
         if (humanChoice === computerChoice) {
-          console.log(
-            `It's a draw! Both chose ${capitalizeFirstLetter(humanChoice)}.`
-          );
-          return "draw";
+          resultMessage = `It's a draw! Both chose ${capitalizeFirstLetter(
+            humanChoice
+          )}.`;
         }
-        if (
+        if (humanChoice === computerChoice) {
+          resultMessage = `It's a draw! Both chose ${capitalizeFirstLetter(
+            humanChoice
+          )}.`;
+        } else if (
           (humanChoice === "rock" && computerChoice === "scissors") ||
           (humanChoice === "scissors" && computerChoice === "paper") ||
           (humanChoice === "paper" && computerChoice === "rock")
         ) {
           humanScore++;
-          console.log(
-            `You win! ${capitalizeFirstLetter(
-              humanChoice
-            )} beats ${capitalizeFirstLetter(computerChoice)}.`
-          );
-          return "human";
-        } else if (
-          (humanChoice === "rock" && computerChoice === "paper") ||
-          (humanChoice === "scissors" && computerChoice === "rock") ||
-          (humanChoice === "paper" && computerChoice === "scissors")
-        ) {
-          computerScore++;
-          console.log(
-            `You lose! ${capitalizeFirstLetter(
-              computerChoice
-            )} beats ${capitalizeFirstLetter(humanChoice)}.`
-          );
-          return "computer";
+          resultMessage = `You win! ${capitalizeFirstLetter(
+            humanChoice
+          )} beats ${capitalizeFirstLetter(computerChoice)}.`;
         } else {
-          console.log(
-            `Invalid choice: ${humanChoice}. Please choose rock, paper, or scissors.`
-          );
-          return;
+          computerScore++;
+          resultMessage = `You lose! ${capitalizeFirstLetter(
+            computerChoice
+          )} beats ${capitalizeFirstLetter(humanChoice)}.`;
         }
+        resultDiv.textContent = resultMessage;
+        checkForWinner();
+      }
+      function checkForWinner() {
+        const resultDiv = document.getElementById("result");
+        if (humanScore === maxScore) {
+          resultDiv.textContent = "Congratulations! You are the champion!";
+          resetGame();
+        } else if (computerScore === maxScore) {
+          resultDiv.textContent = "Sorry! The computer is the champion!";
+          resetGame();
+        }
+      }
+
+      // Function to reset the game
+      function resetGame() {
+        humanScore = 0;
+        computerScore = 0;
+        updateScore();
       }
       document
         .getElementById("rockButton")
