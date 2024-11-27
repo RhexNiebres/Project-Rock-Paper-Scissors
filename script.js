@@ -13,6 +13,7 @@ function getComputerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 const maxScore = 5;
+let history = [];
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -22,6 +23,13 @@ function capitalizeFirstLetter(string) {
 function updateScore() {
   document.getElementById("youScore").textContent = `${humanScore}`;
   document.getElementById("computerScore").textContent = `${computerScore}`;
+}
+
+function showRoundHistory(resultMessage) {
+  //function to show round history
+  const historyLog = document.getElementById("historyLog");
+  historyLog.innerHTML += `<p>${resultMessage}</p>`;
+  historyLog.scrollTop = historyLog.scrollHeight;
 }
 
 function playRound(humanChoice) {
@@ -52,6 +60,14 @@ function playRound(humanChoice) {
 
   resultDiv.textContent = resultMessage;
   updateScore(); //update score display
+
+  history.push(resultMessage); // Update history with the result of this round
+  showRoundHistory(
+    `${capitalizeFirstLetter(humanChoice)} vs ${capitalizeFirstLetter(
+      computerChoice
+    )}: ${resultMessage}`
+  );
+
   checkForWinner();
 }
 
@@ -73,6 +89,8 @@ function resetGame() {
   humanScore = 0;
   computerScore = 0;
   updateScore();
+  history = []; // Reset history
+  document.getElementById("historyLog").innerHTML = "history:";
 }
 
 document.getElementById("rockButton").addEventListener("click", function () {
